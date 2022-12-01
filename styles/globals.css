@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Baskervville&display=swap");
+
+.btn-primary {
+	background-color: #fff;
+	color: #edb506;
+}
+.btn-secondary {
+	background-color: #edb506;
+	color: #fff;
+}
+
+.btn-third {
+	background-color: ##ed5906;
+}

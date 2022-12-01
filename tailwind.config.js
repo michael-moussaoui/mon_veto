@@ -6,6 +6,15 @@ module.exports = {
 		"./components/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
+		colors: {
+			mainColor: "#EDB506",
+			secondColor: "#ED5906",
+			white: "#fff",
+		},
+		fontFamily: {
+			basker: "Baskervville",
+		},
+
 		extend: {},
 	},
 	plugins: [],

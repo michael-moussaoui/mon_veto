@@ -1,33 +1,22 @@
-const { createPool } = require("mysql");
-const pool = createPool({
-	host: "localhost",
-	user: "root",
-	password: "",
-	port: "3306",
-	database: "veto",
+import mysql from "serverless-mysql";
+
+const pool = mysql({
+	config: {
+		host: process.env.MYSQL_HOST,
+		user: process.env.MYSQL_USER,
+		password: process.env.MYSQL_PASSWORD,
+		database: process.env.MYSQL_DATABASE,
+	},
 });
 
-pool.getConnection((err) => {
-	if (err) {
-		console.log("Error connecting to database...");
+export default async function excuteQuery({ query, values }) {
+	try {
+		const results = await pool.query(query, values);
+		await pool.end();
+		return results;
+	} catch (error) {
+		return { error };
 	}
-	console.log("connect to db...");
-});
+}
 
-const executeQuery = (query, arrParms) => {
-	return new Promise((resolve, reject) => {
-		try {
-			pool.query(query, arrParms, (err, data) => {
-				if (err) {
-					console.log("error in executing the query");
-					reject(err);
-				}
-				resolve(data);
-			});
-		} catch (err) {
-			reject(err);
-		}
-	});
-};
-
-module.exports = { executeQuery };
+export { pool };

@@ -1,5 +1,7 @@
+// import mysql from "serverless-mysql";
+
 import nc from "next-connect";
-import { getAllAnimals } from "../../../controller/animal/animal";
+import getAllAnimals from "../../../controller/animal/animal";
 
 const handler = nc();
 handler.get(getAllAnimals);

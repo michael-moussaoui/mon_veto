@@ -1,25 +1,25 @@
 const { createPool } = require("mysql");
+
 const pool = createPool({
 	host: process.env.MYSQL_HOST,
 	user: process.env.MYSQL_USER,
 	password: process.env.MYSQL_PASSWORD,
-	port: process.env.MYSQL_HOST,
 	database: process.env.MYSQL_DATABASE,
 });
 
 pool.getConnection((err) => {
 	if (err) {
-		console.log("error getting connection");
+		console.error("not connected");
 	}
-	console.log("connection etablished");
+	console.log("connected to server");
 });
 
-const excuteQuery = (query, arraParms) => {
+const excuteQuery = (query, arrParms) => {
 	return new Promise((resolve, reject) => {
 		try {
-			pool.query(query, arraParms, (err, data) => {
+			pool.query(query, arrParms, (err, data) => {
 				if (err) {
-					console.log("error in executing the query");
+					console.error("error executing the query", err);
 					reject(err);
 				}
 				resolve(data);
@@ -29,5 +29,4 @@ const excuteQuery = (query, arraParms) => {
 		}
 	});
 };
-
-module.exports = excuteQuery;
+export { excuteQuery };

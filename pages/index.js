@@ -22,7 +22,7 @@ export default function Home() {
 					width={150}
 					height={150}
 				></Image>
-				<div className="absolute right-0 top-10 mr-10 ">
+				<div className="absolute right-0 top-10 mr-10">
 					<Button version="primary">Inscription</Button>
 					<Button version="primary">Connexion</Button>
 					<span className=" text-secondColor font-bold text-[1.5rem]">

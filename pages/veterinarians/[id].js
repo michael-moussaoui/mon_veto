@@ -1,7 +1,5 @@
 import axios from "axios";
 import { useRouter } from "next/router";
-import toast from "react-hot-toast";
-import { Layout } from "components/Layout";
 
 function VeterinarianPage({ veterinarian }) {
 	const router = useRouter();
@@ -17,7 +15,7 @@ function VeterinarianPage({ veterinarian }) {
 	};
 
 	return (
-		<Layout>
+		<>
 			<div className="p-6 bg-white dark:bg-gray-800">
 				<p>Name: {veterinarian.name}</p>
 				<p>Pseudo: {veterinarian.pseudo}</p>
@@ -40,7 +38,7 @@ function VeterinarianPage({ veterinarian }) {
 					Edit
 				</button>
 			</div>
-		</Layout>
+		</>
 	);
 }
 

@@ -15,7 +15,7 @@ function Button({
 	return (
 		<button
 			type="type"
-			disabled="isDisabled"
+			disabled=""
 			className={`btn-${version}`}
 			style={{
 				width: "9rem",

@@ -23,11 +23,17 @@ export default function Home() {
 					height={150}
 				></Image>
 				<div className="absolute right-0 top-10 mr-10">
-					<Button version="primary">Inscription</Button>
-					<Button version="primary">Connexion</Button>
-					<span className=" text-secondColor font-bold text-[1.5rem]">
-						Espace vétérinaire
-					</span>
+					<Link href="/owners/register" passHref>
+						<Button version="primary">Inscription</Button>
+					</Link>
+					<Link href="/owners/login" passHref>
+						<Button version="primary">Connexion</Button>
+					</Link>
+					<Link href="/veterinarian/login">
+						<span className=" text-secondColor font-bold text-[1.5rem]">
+							Espace vétérinaire
+						</span>
+					</Link>
 				</div>
 			</header>
 

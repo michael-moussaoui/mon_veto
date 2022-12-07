@@ -1,11 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import axios from "axios";
 
 function Login() {
 	//STATE
 	const [loginOwnerPseudo, setLoginOwnerPseudo] = useState("");
 	const [loginPassword, setLoginPassword] = useState("");
+
+	const login = () => {
+		axios({
+			method: "post",
+			data: {
+				pseudo: loginOwnerPseudo,
+				password: loginPassword,
+			},
+			withCredentials: true,
+			url: "http://localhost:3001/owners/login",
+		})
+			.then((res) => console.log(res))
+			.catch((err) => console.log(err));
+	};
 
 	return (
 		<div className="h-screen relative overflow-x-hidden bg-mainColor font-basker">
@@ -31,8 +46,11 @@ function Login() {
 						alt="un chien avec un bonnet"
 					></Image>
 				</div>
-				<form className="relative">
-					<label className="relative left-12 text-2xl text-mainColor">
+				<form method="POST" className="relative">
+					<label
+						htmlFor="pseudo"
+						className="relative left-12 text-2xl text-mainColor"
+					>
 						Pseudo
 					</label>
 					<input
@@ -43,7 +61,10 @@ function Login() {
 						placeholder="Choisissez un pseudo"
 						onChange={(e) => setLoginOwnerPseudo(e.target.value)}
 					></input>
-					<label className="relative text-2xl left-12 text-mainColor">
+					<label
+						htmlFor="password"
+						className="relative text-2xl left-12 text-mainColor"
+					>
 						Mot de passe
 					</label>
 					<input
@@ -55,7 +76,10 @@ function Login() {
 						onChange={(e) => setLoginPassword(e.target.value)}
 					></input>
 
-					<button className=" block w-[80%] h-[7vh] bg-mainColor mx-auto text-center text-3xl rounded-md mt-10 text-white">
+					<button
+						onClick={login}
+						className=" block w-[80%] h-[7vh] bg-mainColor mx-auto text-center text-3xl rounded-md mt-10 text-white"
+					>
 						Valider
 					</button>
 					<div className="flex flex-col text-center">

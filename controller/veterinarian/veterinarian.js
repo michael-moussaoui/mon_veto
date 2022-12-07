@@ -46,7 +46,7 @@ const saveVeterinarian = async (req, res) => {
 
 	try {
 		let veterinarianData = await excuteQuery(
-			`INSERT INTO owner(name,pseudo,password,emailAdress,) values(?,?,?,?)`,
+			`INSERT INTO veterinarian(name,pseudo,password) values(?,?,?)`,
 			[name, pseudo, password, emailAdress]
 		);
 		veterinarianData = await excuteQuery(

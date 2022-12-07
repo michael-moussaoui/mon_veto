@@ -1,4 +1,4 @@
-const { createPool } = require("mysql");
+const { createPool } = require("mysql2");
 
 const pool = createPool({
 	host: process.env.MYSQL_HOST,
@@ -14,10 +14,10 @@ pool.getConnection((err) => {
 	console.log("connected to server");
 });
 
-const excuteQuery = (query, arrParms) => {
+const excuteQuery = (query, arraParms) => {
 	return new Promise((resolve, reject) => {
 		try {
-			pool.query(query, arrParms, (err, data) => {
+			pool.query(query, arraParms, (err, data) => {
 				if (err) {
 					console.error("error executing the query", err);
 					reject(err);
@@ -29,4 +29,4 @@ const excuteQuery = (query, arrParms) => {
 		}
 	});
 };
-export { excuteQuery };
+module.exports = excuteQuery;

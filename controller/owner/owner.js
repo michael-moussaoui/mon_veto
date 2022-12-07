@@ -44,7 +44,7 @@ const saveOwner = async (req, res) => {
 
 	try {
 		let ownerData = await excuteQuery(
-			`INSERT INTO owner(name,pseudo,password,emailAdress,) values(?,?,?,?)`,
+			`INSERT INTO owner(name, pseudo, password, emailAdress) values(?,?,?,?)`,
 			[name, pseudo, password, emailAdress]
 		);
 		ownerData = await excuteQuery(

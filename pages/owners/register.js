@@ -1,11 +1,34 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import axios from "axios";
+import handler from "../api/owner";
+import { saveOwner } from "../../controller/owner/owner";
 
 function Register() {
 	//STATE
+	const [registerOwnerName, setRegisterOwnerName] = useState("");
 	const [registerOwnerPseudo, setRegisterOwnerPseudo] = useState("");
 	const [registerPassword, setRegisterPassword] = useState("");
+	const [registerOwnerEmail, setRegisterOwnerEmail] = useState("");
+
+	console.log(registerOwnerName);
+
+	const register = () => {
+		axios({
+			method: "post",
+			data: {
+				name: registerOwnerName,
+				pseudo: registerOwnerPseudo,
+				password: registerPassword,
+				emailAdress: registerOwnerEmail,
+			},
+			// widthCrendatials: true,
+			url: "http://localhost:3001/owners/register",
+		})
+			.then((res) => console.log(res))
+			.catch((err) => console.log(err));
+	};
 
 	return (
 		<div className="h-screen relative overflow-x-hidden bg-mainColor font-basker">
@@ -32,7 +55,24 @@ function Register() {
 					></Image>
 				</div>
 				<form className="relative">
-					<label className="relative left-12 text-2xl text-mainColor">
+					<label
+						htmlFor="name"
+						className="relative left-12 text-2xl text-mainColor"
+					>
+						Nom
+					</label>
+					<input
+						className="block w-[80%] h-[7vh] mx-auto mb-5 bg-mainColor opacity-30 rounded-md placeholder:text-[#000] placeholder:pl-3"
+						id="name"
+						type="text"
+						name="name"
+						placeholder="Veuillez saisir votre nom"
+						onChange={(e) => setRegisterOwnerName(e.target.value)}
+					></input>
+					<label
+						htmlFor="pseudo"
+						className="relative left-12 text-2xl text-mainColor"
+					>
 						Pseudo
 					</label>
 					<input
@@ -43,7 +83,10 @@ function Register() {
 						placeholder="Choisissez un pseudo"
 						onChange={(e) => setRegisterOwnerPseudo(e.target.value)}
 					></input>
-					<label className="relative text-2xl left-12 text-mainColor">
+					<label
+						htmlFor="password"
+						className="relative text-2xl left-12 text-mainColor"
+					>
 						Mot de passe
 					</label>
 					<input
@@ -54,8 +97,25 @@ function Register() {
 						placeholder="Choisissez un mot de passe"
 						onChange={(e) => setRegisterPassword(e.target.value)}
 					></input>
+					<label
+						htmlFor="email"
+						className="relative left-12 text-2xl text-mainColor"
+					>
+						Email
+					</label>
+					<input
+						className="block w-[80%] h-[7vh] mx-auto mb-5 bg-mainColor opacity-30 rounded-md placeholder:text-[#000] placeholder:pl-3"
+						id="email"
+						type="email"
+						name="email"
+						placeholder="Veuillez saisir votre email"
+						onChange={(e) => setRegisterOwnerEmail(e.target.value)}
+					></input>
 
-					<button className=" block w-[80%] h-[7vh] bg-mainColor mx-auto text-center text-3xl rounded-md mt-10 text-white">
+					<button
+						onClick={register}
+						className=" block w-[80%] h-[7vh] bg-mainColor mx-auto text-center text-3xl rounded-md mt-10 text-white"
+					>
 						Valider
 					</button>
 					<div className="flex justify-center">

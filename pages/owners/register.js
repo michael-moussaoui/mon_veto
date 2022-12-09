@@ -44,13 +44,13 @@ function Register() {
 			</header>
 
 			<div className="w-[30vw] h-[75vh] mx-auto  bg-white rounded-md">
-				<h1 className=" text-mainColor text-center text-4xl pt-10 mb-10">
+				<h1 className=" text-mainColor text-center text-4xl pt-10 mb-5">
 					Inscription
 				</h1>
 				<div className="h-screen w-[30vw] absolute right-0 bottom-0 border-l-2 border-l-secondColor">
 					<Image
 						src={"/images/dogRegister.jpg"}
-						fill
+						objectif="cover"
 						alt="un chien avec un bonnet"
 					></Image>
 				</div>
@@ -62,7 +62,7 @@ function Register() {
 						Nom
 					</label>
 					<input
-						className="block w-[80%] h-[7vh] mx-auto mb-5 bg-mainColor opacity-30 rounded-md placeholder:text-[#000] placeholder:pl-3"
+						className="block w-[80%] h-[5vh] mx-auto mb-5 bg-mainColor opacity-30 rounded-md placeholder:text-[#000] placeholder:pl-3"
 						id="name"
 						type="text"
 						name="name"
@@ -71,12 +71,12 @@ function Register() {
 					></input>
 					<label
 						htmlFor="pseudo"
-						className="relative left-12 text-2xl text-mainColor"
+						className="relative left-12 text-xl text-mainColor"
 					>
 						Pseudo
 					</label>
 					<input
-						className="block w-[80%] h-[7vh] mx-auto mb-5 bg-mainColor opacity-30 rounded-md placeholder:text-[#000] placeholder:pl-3"
+						className="block w-[80%] h-[5vh] mx-auto mb-5 bg-mainColor opacity-30 rounded-md placeholder:text-[#000] placeholder:pl-3"
 						id="pseudo"
 						type="text"
 						name="pseudo"
@@ -85,12 +85,12 @@ function Register() {
 					></input>
 					<label
 						htmlFor="password"
-						className="relative text-2xl left-12 text-mainColor"
+						className="relative text-xl left-12 text-mainColor"
 					>
 						Mot de passe
 					</label>
 					<input
-						className="block w-[80%] h-[7vh] mx-auto bg-mainColor opacity-30 rounded-md placeholder:text-[#000] placeholder:pl-3"
+						className="block w-[80%] h-[5vh] mb-5 mx-auto bg-mainColor opacity-30 rounded-md placeholder:text-[#000] placeholder:pl-3"
 						id="password"
 						type="password"
 						name="password"
@@ -99,12 +99,12 @@ function Register() {
 					></input>
 					<label
 						htmlFor="email"
-						className="relative left-12 text-2xl text-mainColor"
+						className="relative left-12 text-xl text-mainColor"
 					>
 						Email
 					</label>
 					<input
-						className="block w-[80%] h-[7vh] mx-auto mb-5 bg-mainColor opacity-30 rounded-md placeholder:text-[#000] placeholder:pl-3"
+						className="block w-[80%] h-[5vh] mx-auto mb-5 bg-mainColor opacity-30 rounded-md placeholder:text-[#000] placeholder:pl-3"
 						id="email"
 						type="email"
 						name="email"

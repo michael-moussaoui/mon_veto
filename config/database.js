@@ -1,32 +1,32 @@
-const { createPool } = require("mysql2");
+// const { createPool } = require("mysql2");
 
-const pool = createPool({
-	host: process.env.MYSQL_HOST,
-	user: process.env.MYSQL_USER,
-	password: process.env.MYSQL_PASSWORD,
-	database: process.env.MYSQL_DATABASE,
-});
+// const pool = createPool({
+// 	host: process.env.MYSQL_HOST,
+// 	user: process.env.MYSQL_USER,
+// 	password: process.env.MYSQL_PASSWORD,
+// 	database: process.env.MYSQL_DATABASE,
+// });
 
-pool.getConnection((err) => {
-	if (err) {
-		console.error("not connected");
-	}
-	console.log("connected to server");
-});
+// pool.getConnection((err) => {
+// 	if (err) {
+// 		console.error("not connected");
+// 	}
+// 	console.log("connected to server");
+// });
 
-const excuteQuery = (query, arraParms) => {
-	return new Promise((resolve, reject) => {
-		try {
-			pool.query(query, arraParms, (err, data) => {
-				if (err) {
-					console.error("error executing the query", err);
-					reject(err);
-				}
-				resolve(data);
-			});
-		} catch (err) {
-			reject(err);
-		}
-	});
-};
-module.exports = excuteQuery;
+// const excuteQuery = (query, arraParms) => {
+// 	return new Promise((resolve, reject) => {
+// 		try {
+// 			pool.query(query, arraParms, (err, data) => {
+// 				if (err) {
+// 					console.error("error executing the query", err);
+// 					reject(err);
+// 				}
+// 				resolve(data);
+// 			});
+// 		} catch (err) {
+// 			reject(err);
+// 		}
+// 	});
+// };
+// module.exports = excuteQuery;

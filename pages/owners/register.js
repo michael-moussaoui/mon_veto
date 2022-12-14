@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../../components/Buttons/Button";
 import { useState } from "react";
 import axios from "axios";
 import handler from "../api/owner";
@@ -41,20 +42,25 @@ function Register() {
 						height={150}
 					></Image>
 				</Link>
+				<div className="relative left-48 -top-20 mr-10">
+					<Link href="/" passHref>
+						<Button version="primary">Accueil</Button>
+					</Link>
+				</div>
 			</header>
 
-			<div className="w-[30vw] h-[75vh] mx-auto  bg-white rounded-md">
+			<div className="w-[30vw] h-[75vh] mx-auto -mt-10  bg-white rounded-md">
 				<h1 className=" text-mainColor text-center text-4xl pt-10 mb-5">
 					Inscription
 				</h1>
 				<div className="h-screen w-[30vw] absolute right-0 bottom-0 border-l-2 border-l-secondColor">
 					<Image
 						src={"/images/dogRegister.jpg"}
-						objectif="cover"
+						fill
 						alt="un chien avec un bonnet"
 					></Image>
 				</div>
-				<form className="relative">
+				<form className="relative ">
 					<label
 						htmlFor="name"
 						className="relative left-12 text-2xl text-mainColor"

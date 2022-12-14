@@ -18,14 +18,9 @@ function Profile() {
 				</Link>
 				<div className="absolute right-0 top-10 mr-10">
 					<Link href="" passHref>
-						<Button version="primary">Mesures</Button>
+						<Button version="primary">Vaccins</Button>
 					</Link>
-					<Link href="" passHref>
-						<Button version="primary">Santé</Button>
-					</Link>
-					<Link href="" passHref>
-						<Button version="primary">Soins</Button>
-					</Link>
+
 					<Link href="" passHref>
 						<Button version="primary">Mes visites</Button>
 					</Link>

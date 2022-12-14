@@ -1,22 +1,9 @@
-import react from "react";
-import Image from "next/image";
+import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Button from "../../components/Buttons/Button";
-// import { useSession, signIn, signOut } from "next-auth/react";
 
-function Login() {
-	//STATE
-	// const { data: session } = useSession();
-
-	// if (session) {
-	// 	return (
-	// 		<div>
-	// 			{/* <p>Bonjour, {session.user.email}</p> */}
-	// 			{/* <button onClick={() => signOut()}>Se déconnecter</button> */}
-	// 		</div>
-	// 	);
-	// }
-	// else {
+function login() {
 	return (
 		<div className="h-screen relative overflow-x-hidden bg-mainColor font-basker">
 			<header>
@@ -34,6 +21,9 @@ function Login() {
 					</Link>
 				</div>
 			</header>
+			<p className="mt-[-5rem] mb-10 text-center text-secondColor text-4xl">
+				ESPACE VETERINAIRE
+			</p>
 
 			<div className="w-[30vw] h-[70vh] mx-auto top-48 bg-white rounded-md">
 				<h1 className=" text-mainColor text-center text-4xl pt-10 mb-10">
@@ -41,7 +31,7 @@ function Login() {
 				</h1>
 				<div className="h-screen w-[30vw] absolute right-0 bottom-0 border-l-2 border-l-secondColor">
 					<Image
-						src={"/images/dogLogin.jpg"}
+						src={"/images/dogVeterinarian.jpg"}
 						fill
 						alt="un chien avec un bonnet"
 					></Image>
@@ -51,14 +41,14 @@ function Login() {
 						htmlFor="pseudo"
 						className="relative left-12 text-2xl text-mainColor"
 					>
-						Pseudo
+						Identifiant
 					</label>
 					<input
 						className="block w-[80%] h-[7vh] mx-auto mb-5 bg-mainColor opacity-30 rounded-md placeholder:text-[#000] placeholder:pl-3"
 						id="pseudo"
 						type="text"
 						name="pseudo"
-						placeholder="Choisissez un pseudo"
+						placeholder="Saisissez votre indentifiant"
 						onChange={(e) => setLoginOwnerPseudo(e.target.value)}
 					></input>
 					<label
@@ -72,7 +62,7 @@ function Login() {
 						id="password"
 						type="password"
 						name="password"
-						placeholder="Choisissez un mot de passe"
+						placeholder="Saisissez votre mot de passe"
 						onChange={(e) => setLoginPassword(e.target.value)}
 					></input>
 
@@ -82,25 +72,18 @@ function Login() {
 					>
 						Valider
 					</button>
-					<div className="flex flex-col text-center">
+					{/* <div className="flex flex-col text-center">
 						<p className="text-mainColor mt-2">
 							Vous n&apos;avez pas encore un compte ?
 						</p>
 						<Link href="/owners/register">
 							<p className=" text-secondColor">Inscrivez-vous ici.</p>
 						</Link>
-					</div>
-
-					<div>
-						<p className=" text-secondColor">
-							vous n&apos;êtes pas connecté(e).
-						</p>
-						<button onClick={() => signIn()}>Connexion</button>
-					</div>
+					</div> */}
 				</form>
 			</div>
 		</div>
 	);
 }
 
-export default Login;
+export default login;

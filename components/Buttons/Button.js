@@ -20,7 +20,7 @@ function Button({
 			style={{
 				width: "9rem",
 				height: "2.5rem",
-				fontSize: "1.5rem",
+				// fontSize: "1.5rem",
 				marginRight: "2.5rem",
 				borderRadius: "40px",
 			}}
